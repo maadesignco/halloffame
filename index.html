@@ -7,28 +7,55 @@
     <title>Hall of fame - Miguel Arias</title>
     <!-- Bootstrap -->
 	<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-	<script src="https://cdn.rawgit.com/supermedium/aframe-environment-component/v4.1.0/dist/aframe-environment-component.min.js"></script>  
+	<script src="https://cdn.rawgit.com/supermedium/aframe-environment-component/v4.1.0/dist/aframe-environment-component.min.js"></script>
+  
 	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 	
   </head>
   <body>
   	<!-- body code goes here -->
 	<a-scene>
+		<a-assets>
+   		 <a-asset-item id="caja1" src="3d/caja1.gltf"></a-asset-item>
+		 <a-asset-item id="caja2" src="3d/caja2.gltf"></a-asset-item>
+		 <a-asset-item id="caja3" src="3d/caja3.gltf"></a-asset-item>
+  		</a-assets>
+		
 	  <a-entity environment="preset: egypt; castShadow:true; intensity:2;" position= "0 7 0"></a-entity>		
 	  <a-sky src="images/cielo.jpg"></a-sky>	
 	  <a-gltf-model src="3d/salon.gltf" scale="1 1 1" position="0 -4.5 0" ambient-occlusion-map="true" ambient-occlusion-map-intensity="1" shadow></a-gltf-model>
 	  <a-plane position="0 -4.7 0" width="500" height="500" rotation="-90 0 0" color="green" roughness="1" shadow></a-plane>
+	  
+	  <a-gltf-model src="3d/mesa/scene.gltf" scale="80 40 70" position="-16.484 -4.53 0" rotation="0 90 0" ambient-occlusion-map="true" ambient-occlusion-map-intensity="1" shadow></a-gltf-model>	
 		
-	<a-entity
-  geometry="primitive: box"
-  material="color: red"
-  rotation="0 0 0"
-  animation="property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true">
-</a-entity>
-	
+	  <a-entity
+		  gltf-model="#caja1"
+		  animation-mixer
+		  position="-16.4 0 -0.05"		
+		  rotation="0 0 0"
+		  scale="0.4 0.4 0.4" 	 	
+		  animation="property: rotation; to: 360 360 0; dur: 10000; easing: linear; loop: true">
+		</a-entity>
+	   <a-entity
+		  gltf-model="#caja2"
+		  animation-mixer
+		  position="-16.4 0 -3.529"		
+		  rotation="0 0 0"
+		  scale="0.4 0.4 0.4" 	 	
+		  animation="property: rotation; to: -360 360 0; dur: 10000; easing: linear; loop: true">
+		</a-entity>
+	   <a-entity
+		  gltf-model="#caja3"
+		  animation-mixer
+		  position="-16.4 0 3.648"		
+		  rotation="0 0 0"
+		  scale="0.4 0.4 0.4" 	 	
+		  animation="property: rotation; to: -360 360 0; dur: 10000; easing: linear; loop: true">
+		</a-entity> 
+		
 		
 	</a-scene>
-
+	  
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="js/jquery-3.4.1.min.js"></script>
 
